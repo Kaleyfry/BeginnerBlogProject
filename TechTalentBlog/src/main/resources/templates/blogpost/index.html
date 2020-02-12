@@ -2,13 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Blog Site</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- Latest compiled and minified CSS -->
-	    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar" ></div>
 <div class="container">
-<h1>Welcome to Our Blog Post Site!</h1>
+<h1>Welcome to My Blog Post Site!</h1>
 
 	<div class="row">
 		<div th:each="blog:${posts}">
@@ -25,7 +24,7 @@
 					<!-- Link to Update -->
 					<!-- Link to Show  -->
 					<!--  Link to Destroy -->
-					Buttons
+					<!-- buttons -->					
 				</div>
 			</div>
 		</div>
@@ -33,9 +32,20 @@
 </div>
 
 	<a th:href="@{/blog_posts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+	<a th:href="@{/blog_posts/edit}"><button class="btn btn-primary">Edit a Blog Post</button></a>
+	<!-- <br> <a th:href="@[/blog_posts/delete]"><button class="btn btn-primary">Delete a Blog Post</button></a> -->
+	<!-- <br>
+		<div>
+			<form action="#" th:action="@{'/blog_posts/{id}' (id=${blog.id})}" th:method="delete"
+                      class="form-horizontal">
+        		<div class="form-group">
+            		<input type="hidden" name="_method" value="delete"/>
+        			<button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+    			</div>
+			</form>
+		</div> -->
 
 </div>
-	<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<div th:replace="/fragments/styling :: body-links" ></div>
 </body>
 </html>

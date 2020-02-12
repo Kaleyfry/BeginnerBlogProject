@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Blog Project</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link href="../../webjars/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../../css/standard.css" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="navbar">
+		<nav class="nav">
+  			<ul class="nav nav-pills">
+  				<li class="nav-item">
+    				<a class="nav-link active" th:href="@{/}">Back To Home Page</a>
+    			</li>
+  			<ul class="nav nav-pills">
+  				<li class="nav-item">
+    				<a class="nav-link" th:href="@{/blog_posts/new}">Submit a New Blog Post</a>
+    			</li>
+		</nav>
+	</div>
+</body>
+
+	<script src="../../webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>
+

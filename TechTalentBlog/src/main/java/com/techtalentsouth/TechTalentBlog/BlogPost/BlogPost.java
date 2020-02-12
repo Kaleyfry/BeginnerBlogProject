@@ -59,5 +59,4 @@ public class BlogPost {
 		return "BlogPost [id=" + id + ", title=" + title + ", author=" + author + ", blogEntry=" + blogEntry + "]";
 	}
     
-    
 }

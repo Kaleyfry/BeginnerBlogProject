@@ -63,13 +63,11 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-	
-	
+			
 	<dependency>
 	    <groupId>org.webjars</groupId>
 	    <artifactId>bootstrap</artifactId>
-	    <version>3.3.7</version>
+	    <version>4.4.1</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.webjars</groupId>
@@ -81,6 +79,10 @@
 	    <artifactId>jquery</artifactId>
 	    <version>1.9.1</version>
 	</dependency>
+		
+	</dependencies>
+	
+
 
 	<build>
 		<plugins>

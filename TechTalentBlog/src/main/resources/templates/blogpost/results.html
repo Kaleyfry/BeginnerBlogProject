@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 		<title>Blog Site</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar" ></div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -30,7 +30,6 @@
 </div>
 
 	
-	<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+	<div th:replace="/fragments/styling :: body-links" ></div>
 </body>
 </html>

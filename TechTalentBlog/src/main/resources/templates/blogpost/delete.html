@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Edit Blog</title>
+    <div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+	<body>
+		<div th:replace="fragments/navbar :: navbar" ></div>
+		<div class="container">
+		<form action="#" th:action="@{'/blog_posts/{id}'(id=${blog.id})}" th:method="delete"
+                      class="form-horizontal">
+        <div class="form-group">
+            <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+    </div>
+</form>
+</div>
+	<div th:replace="/fragments/styling :: body-links" ></div>
+</body>
+</html>
