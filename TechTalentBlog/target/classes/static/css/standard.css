@@ -10,3 +10,15 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,111,121,1) 35%, rgb
 	padding-bottom: 10px;
 	border-radius: 5px; 
 }
+
+.col{
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px; 
+}
+
+h1{
+	color: blue;
+}

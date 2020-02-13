@@ -16,17 +16,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BlogPostController {
 	
+	private BlogPost blogPost;
+	
 	@Autowired
 	private BlogPostRepository blogPostRepository;
-	private static List<BlogPost> posts = new ArrayList<>();
+//	private static List<BlogPost> posts = new ArrayList<>();
 	
 	@GetMapping(value="/")
 	public String index(BlogPost blogPost, Model model) {
-		model.addAttribute("posts",posts);
+//		model.addAttribute("posts",posts);
+		model.addAttribute("repo", blogPostRepository.findAll());
 		return "blogpost/index";
 	    }
-	
-	private BlogPost blogPost;
 	
 	@GetMapping(value="/blog_posts/new")
 		public String newBlog (BlogPost blogpost) {
@@ -48,10 +49,16 @@ public class BlogPostController {
 		return "blogpost/new";
 	}
 	
+	@GetMapping("/blog_posts/delete/{id}")
+	public String deletePostById(@PathVariable Long id, BlogPost blogpost) {
+		blogPostRepository.deleteById(id);
+		return "redirect:/";
+	}
+	
 	 @PostMapping(value = "/blog_posts/new")
-	    public String create(BlogPost blogPost, Model model) {
+	    public String assNewBlogPost(BlogPost blogPost, Model model) {
 		blogPostRepository.save(blogPost);
-		posts.add(blogPost);
+//		posts.add(blogPost);
 		model.addAttribute("title", blogPost.getTitle());
 		model.addAttribute("author", blogPost.getAuthor());
 		model.addAttribute("blogEntry", blogPost.getBlogEntry());
@@ -60,12 +67,12 @@ public class BlogPostController {
 	 
 	 
 	 
-	    @RequestMapping(value = "/blog_posts/{id}", method = RequestMethod.DELETE)
-	    public String deletePostWithId(@PathVariable Long id,
-	    								BlogPost blogPost) {
-	        blogPostRepository.deleteById(id);
-	        return "/";
-
-	    }
+//	    @RequestMapping(value = "/blog_posts/{id}", method = RequestMethod.DELETE)
+//	    public String deletePostWithId(@PathVariable Long id,
+//	    								BlogPost blogPost) {
+//	        blogPostRepository.deleteById(id);
+//	        return "/";
+//
+//	    }
 
 }
